@@ -60,7 +60,7 @@ public class LoopPrintTest {
     {
         System.out.println("This test should print a trapezoid underneath");
         final int TOP = 4;
-        final int BOTTOM = 3;
+        final int BOTTOM = 4;
 
         Trapezoid sq = new Trapezoid(TOP,BOTTOM);
         for (char align: aligns) {
