@@ -24,7 +24,16 @@ public class Shape {
         this.label = label;
     }
 
-    public void print(){
-        System.out.println("printing...");
+    public void print() {
+        if(getAlign() == 'l'){
+            printLeft();
+        }
+        else if (getAlign() == 'r')
+        {
+            printRight();
+        }
     }
+    public void printLeft(){}
+    public void printRight(){}
+
 }

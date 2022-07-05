@@ -1,43 +1,55 @@
 package pojo;
 
 public class Trapezoid extends Shape{
-    private int height;
-    private int top;
-    private int bottom;
+    final private int top;
+    final private int bottom;
+    final private int height;
 
-    public Trapezoid(int height, int top, int bottom) {
+    public Trapezoid(int top, int bottom) {
         super();
-        this.height = height;
-        this.top = top;
-        this.bottom = bottom;
-    }
+        this.height = Math.abs(top-bottom)+1;
 
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
+        int tempTop = top;
+        int tempBot = bottom;
+        if (top < bottom) {
+            tempBot = top;
+            tempTop = bottom;
+        }
+        this.top = tempBot;
+        this.bottom = tempTop;
     }
 
     public int getTop() {
         return top;
     }
 
-    public void setTop(int top) {
-        this.top = top;
-    }
-
     public int getBottom() {
         return bottom;
     }
 
-    public void setBottom(int bottom) {
-        this.bottom = bottom;
-    }
-
     @Override
-    public void print() {
-        super.print();
+    public void printLeft()
+    {
+        for (int i = 0; i < this.height; i++) {
+            for (int j = 0; j < top+i; j++) {
+                System.out.print(getLabel());
+            }
+            System.out.println();
+        }
+        System.out.println(); //图形之间空行
+    }
+    @Override
+    public void printRight()
+    {
+        for (int i = 0; i < this.height; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < this.bottom-i; j++) {
+                System.out.print(getLabel());
+            }
+            System.out.println();
+        }
+        System.out.println(); //图形之间空行
     }
 }
