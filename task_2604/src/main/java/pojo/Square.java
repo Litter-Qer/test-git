@@ -21,5 +21,6 @@ public class Square extends Rectangle {
             }
             System.out.println();
         }
+        System.out.println(); //图形之间空行
     }
 }

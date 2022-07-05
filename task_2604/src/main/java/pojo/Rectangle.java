@@ -33,5 +33,6 @@ public class Rectangle extends Shape {
             }
             System.out.println();
         }
+        System.out.println(); //图形之间空行
     }
 }

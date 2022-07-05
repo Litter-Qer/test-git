@@ -24,5 +24,7 @@ public class Shape {
         this.label = label;
     }
 
-    public void print(){}
+    public void print(){
+        System.out.println("printing...");
+    }
 }
